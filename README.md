@@ -8,18 +8,24 @@ Prerequisite
 
 this will download the test cases for the escher implementation, and set in the env the required env key(s)
 
-    $ source env.sh
+```sh
+    source .envrc
+```
 
 Run the tests
 -------------
 
 in 1.9:
 
-    $ go test ./...
+```sh
+go test ./...
+```
 
 in older go versions:
 
-    $ go test $(go list ./... | grep -v /vendor/)
+```sh
+go test $(go list ./... | grep -v /vendor/)
+```
 
 About Escher
 ------------
