@@ -17,6 +17,10 @@ func TestGetStringToSign(t *testing.T) {
 	EachTestConfigFor(t, []string{"signRequest"}, []string{"error"}, func(t *testing.T, c config.Config, testConfig TestConfig) bool {
 		stringToSign := NewSubject(c).getStringToSign(&testConfig.Request, testConfig.HeadersToSign)
 
+		if len(testConfig.Expected.StringToSign) == 0 {
+			return true
+		}
+
 		return assert.Equal(t, stringToSign, testConfig.Expected.StringToSign, "stringToSign expected to eq with the test config expectation")
 	})
 }
