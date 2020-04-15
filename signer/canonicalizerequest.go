@@ -10,7 +10,7 @@ import (
 func (s *signer) CanonicalizeRequest(r request.Interface, headersToSign []string) string {
 	var u = parsePathQuery(r.RawURL())
 	parts := make([]string, 0, 6)
-	parts = append(parts, r.Method())
+	parts = append(parts, strings.ToUpper(r.Method()))
 	parts = append(parts, canonicalizePath(u.Path))
 	parts = append(parts, canonicalizeQuery(u.Query))
 	parts = append(parts, s.canonicalizeHeaders(r, headersToSign))
