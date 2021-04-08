@@ -12,6 +12,8 @@ this will download the test cases for the escher implementation, and set in the 
     source .envrc
 ```
 
+NOTE: If you use `direnv` and allow this dir, it should auto-load the env-vars for you.
+
 Run the tests
 -------------
 
